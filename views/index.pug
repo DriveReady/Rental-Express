@@ -1,0 +1,1113 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Rental Express
+    link(rel='shortcut icon', href='dist/images/favicon.ico')
+    // Plugin CSS
+    link(href='dist/css/plugins.min.css', rel='stylesheet')
+    // main Css
+    link(href='dist/css/main.min.css', rel='stylesheet')
+  body
+    // header
+    #header-fix.header.fixed-top.transperant
+      nav.navbar.navbar-toggleable-md.navbar-expand-lg.navbar-light.py-lg-0.py-4
+        a.navbar-brand.mr-4.mr-md-5(href='index.html')
+          img(src='dist/images/logo-v1.png', alt='')
+        #dl-menu.dl-menuwrapper.d-block.d-lg-none.float-right
+          button Open Menu
+          ul.dl-menu
+            li.nav-item.active.dropdown
+              a.nav-link(href='#', data-toggle='dropdown', aria-expanded='false') Home
+              ul.dl-submenu
+                li.dl-back
+                  a(href='#') back
+                li
+                  a(href='index.html') Home 1
+                li
+                  a(href='index-2.html') Home 2
+            li.nav-item.dropdown
+              a.nav-link(href='#', data-toggle='dropdown', aria-expanded='false') Explore
+              ul.dl-submenu
+                li.dl-back
+                  a(href='#') back
+                li
+                  a(href='listing-explore-place-profile.html') Explore Place
+                li
+                  a(href='listing-explore-event-profile.html') Explore Event
+                li
+                  a(href='listing-explore-property-profile.html') Explore Property
+            li.nav-item.dropdown
+              a.nav-link(href='#', data-toggle='dropdown', aria-expanded='false') Listing
+              ul.dl-submenu
+                li.dl-back
+                  a(href='#') back
+                li.dropdown-submenu
+                  a(tabindex='-1', href='#') Listing By Categories
+                  ul.dl-submenu
+                    li.dl-back
+                      a(href='#') back
+                    li
+                      a(href='listing-categories-style1.html') Category 1
+                    li
+                      a(href='listing-categories-style2.html') Category 2
+                li.dropdown-submenu
+                  a(tabindex='-1', href='#') Listing No Map
+                  ul.dl-submenu
+                    li.dl-back
+                      a(href='#') back
+                    li
+                      a(href='listing-no-map-sidebar.html') With Sidebar
+                    li
+                      a(href='listing-no-map-fullwidth.html') Full Width
+                li.dropdown-submenu
+                  a(tabindex='-1', href='#') Half Screen Map
+                  ul.dl-submenu
+                    li.dl-back
+                      a(href='#') back
+                    li
+                      a(href='half-screen-search-sidebar-place.html') With Search Place
+                    li
+                      a(href='half-screen-search-sidebar-event.html') With Search Event
+                    li
+                      a(href='half-screen-search-sidebar-property.html') With Search Property
+                    li
+                      a(href='half-screen-with-categories-sidebar.html') With Categories Sidebar
+            li.nav-item.dropdown
+              a.nav-link(href='#', data-toggle='dropdown', aria-expanded='false') Pages
+              ul.dl-submenu
+                li.dl-back
+                  a(href='#') back
+                li.dropdown-submenu
+                  a(tabindex='-1', href='#') Blog
+                  ul.dl-submenu
+                    li.dl-back
+                      a(href='#') back
+                    li
+                      a(href='blog-grid.html')  Blog Grid
+                    li
+                      a(href='blog-listing.html')  Blog Listing
+                    li
+                      a(href='blog-single.html')  Single Post
+                li
+                  a(href='contact.html')  Contact
+                li
+                  a(href='user-profile.html')  User Profile
+                li
+                  a(href='faq.html')  Faq
+                li
+                  a(href='pricing.html')  Pricing Table
+                li
+                  a(href='coming-soon.html')  Coming Soon
+                li.dropdown-submenu
+                  a(tabindex='-1', href='#') 404 Error
+                  ul.dl-submenu
+                    li.dl-back
+                      a(href='#') back
+                    li
+                      a(href='error-dark.html')  404 Error Dark
+                    li
+                      a(href='error-light.html')  404 Error Light
+            if(userData)
+              li
+                a.text-white(href='')
+                  i.fa.fa-user-circle.pr-2
+                    print  Welcome #{userData.userName}
+              li
+                a(href='add-listing.html')
+                  i.fa.fa-plus.pr-1
+                  |  Add Listing
+            else
+              li
+                a.text-white.login_form(href='#modal')
+                  i.fa.fa-sign-in.pr-2
+                  |  Sign In | Register
+        #navbarNav.collapse.navbar-collapse.d-none.d-lg-block
+          ul.navbar-nav.mr-auto
+            li.nav-item.active.dropdown
+              a.nav-link(href='#', data-toggle='dropdown', aria-expanded='false')
+                | Home 
+                i.fa.fa-angle-down
+              ul.dropdown-menu
+                li
+                  a(href='index.html') Home 1
+                li
+                  a(href='index-2.html') Home 2
+            li.nav-item.dropdown
+              a.nav-link(href='#', data-toggle='dropdown', aria-expanded='false')
+                | Explore 
+                i.fa.fa-angle-down
+              ul.dropdown-menu
+                li
+                  a(href='listing-explore-place-profile.html') Explore Place
+                li
+                  a(href='listing-explore-event-profile.html') Explore Event
+                li
+                  a(href='listing-explore-property-profile.html') Explore Property
+            li.nav-item.dropdown
+              a.nav-link(href='#', data-toggle='dropdown', aria-expanded='false')
+                | Listing 
+                i.fa.fa-angle-down
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a(tabindex='-1', href='#') Listing By Categories
+                  ul.dropdown-menu
+                    li
+                      a(href='listing-categories-style1.html') Category 1
+                    li
+                      a(href='listing-categories-style2.html') Category 2
+                li.dropdown-submenu
+                  a(tabindex='-1', href='#') Listing No Map
+                  ul.dropdown-menu
+                    li
+                      a(href='listing-no-map-sidebar.html') With Sidebar
+                    li
+                      a(href='listing-no-map-fullwidth.html') Full Width
+                li.dropdown-submenu
+                  a(tabindex='-1', href='#') Half Screen Map
+                  ul.dropdown-menu
+                    li
+                      a(href='half-screen-search-sidebar-place.html') With Search Place
+                    li
+                      a(href='half-screen-search-sidebar-event.html') With Search Event
+                    li
+                      a(href='half-screen-search-sidebar-property.html') With Search Property
+                    li
+                      a(href='half-screen-with-categories-sidebar.html') With Categories Sidebar
+            li.nav-item.dropdown
+              a.nav-link(href='#', data-toggle='dropdown', aria-expanded='false')
+                | Pages 
+                i.fa.fa-angle-down
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a(tabindex='-1', href='#') Blog
+                  ul.dropdown-menu
+                    li
+                      a(href='blog-grid.html')  Blog Grid
+                    li
+                      a(href='blog-listing.html')  Blog Listing
+                    li
+                      a(href='blog-single.html')  Single Post
+                li
+                  a(href='contact.html')  Contact
+                li
+                  a(href='user-profile.html')  User Profile
+                li
+                  a(href='faq.html')  Faq
+                li
+                  a(href='pricing.html')  Pricing Table
+                li
+                  a(href='coming-soon.html')  Coming Soon
+                li.dropdown-submenu
+                  a(tabindex='-1', href='#') 404 Error
+                  ul.dropdown-menu
+                    li
+                      a(href='error-dark.html')  404 Error Dark
+                    li
+                      a(href='error-light.html')  404 Error Light
+          if(userData)
+            ul.list-unstyled.my-2.my-lg-0
+              li.text-white
+                i.fa.fa-user-circle.pr-2
+                a.text-white(href='') Welcome #{userData.userName}
+            a.btn.btn-outline-light.btn-sm.ml-0.ml-lg-4.mt-3.mt-lg-0(href='add-listing.html')
+              i.fa.fa-plus.pr-1
+              |  Add Listing
+          else
+            ul.list-unstyled.my-2.my-lg-0
+              li.text-white
+                i.fa.fa-sign-in.pr-2
+                a.text-white.login_form(href='#modal') Sign In | Register
+    // End header
+    // Page Inner
+    section.image-bg.lis-grediant.grediant-tb
+      .background-image-maker
+      .holder-image
+        img.img-fluid.d-none(src='dist/images/bg2.jpg', alt='')
+      .container
+        .row.justify-content-center.pt-5
+          .col-12.col-md-10.text-center.wow.fadeInUp
+            .heading.pb-5
+              h1.display-4 Find Nearby Spots
+              h4.font-weight-normal.mb-0 Expolore top-rated attractions, activities and more
+            ul#myTab.nav.nav-tabs.flex-column.flex-sm-row(role='tablist')
+              li.nav-item.mr-md-1
+                a#home-tab.nav-link.active(data-toggle='tab', href='#home', role='tab', aria-controls='home', aria-selected='true')
+                  i.fa.fa-map-marker.pr-1
+                  |  Places
+              li.nav-item.mr-md-1
+                a#profile-tab.nav-link(data-toggle='tab', href='#profile', role='tab', aria-controls='profile', aria-selected='false')
+                  i.fa.fa-microphone.pr-1
+                  |  Events
+              li.nav-item.mr-md-1
+                a#contact-tab.nav-link(data-toggle='tab', href='#contact', role='tab', aria-controls='contact', aria-selected='false')
+                  i.fa.fa-home.pr-1
+                  |  Property
+            #myTabContent.tab-content.bg-white.p-5.rounded-bottom.rounded-right
+              #home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
+                .row
+                  .col-12.col-md-12
+                    .form-group
+                      input.form-control.border-top-0.border-left-0.border-right-0.rounded-0.pl-4(type='text', placeholder='What are you looking for?')
+                      .lis-search
+                        i.fa.fa-search.lis-primary
+                  .col-12.col-sm-6.col-lg-4
+                    .form-group
+                      input.form-control.border-top-0.border-left-0.border-right-0.rounded-0.pl-4(type='text', placeholder='Location')
+                      .lis-search
+                        i.fa.fa-map-o.lis-primary
+                  .col-12.col-sm-6.col-lg-4
+                    .form-group
+                      select.form-control.border-top-0.border-left-0.border-right-0.rounded-0.pl-4
+                        option  All Categories
+                        option 1
+                        option 2
+                        option 3
+                      .lis-search
+                        i.fa.fa-tags.lis-primary
+                  .col-12.col-lg-4
+                    a.btn.btn-primary.btn-block.btn-lg(href='#')
+                      i.fa.fa-search.pr-1
+                      |  Search
+              #profile.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab')
+                .row
+                  .col-12.col-md-12
+                    .form-group
+                      input.form-control.border-top-0.border-left-0.border-right-0.rounded-0.pl-4(type='text', placeholder='What are you looking for?')
+                      .lis-search
+                        i.fa.fa-search.lis-primary
+                  .col-12.col-sm-6.col-lg-4
+                    .form-group
+                      input.form-control.border-top-0.border-left-0.border-right-0.rounded-0.pl-4(type='text', placeholder='Location')
+                      .lis-search
+                        i.fa.fa-map-o.lis-primary
+                  .col-12.col-sm-6.col-lg-4
+                    .form-group
+                      select.form-control.border-top-0.border-left-0.border-right-0.rounded-0.pl-4
+                        option  All Categories
+                        option 1
+                        option 2
+                        option 3
+                      .lis-search
+                        i.fa.fa-tags.lis-primary
+                  .col-12.col-lg-4
+                    a.btn.btn-primary.btn-block.btn-lg(href='#')
+                      i.fa.fa-search.pr-1
+                      |  Search
+              #contact.tab-pane.fade(role='tabpanel', aria-labelledby='contact-tab')
+                .row
+                  .col-12.col-md-12
+                    .form-group
+                      input.form-control.border-top-0.border-left-0.border-right-0.rounded-0.pl-4(type='text', placeholder='What are you looking for?')
+                      .lis-search
+                        i.fa.fa-search.lis-primary
+                  .col-12.col-sm-6.col-lg-4
+                    .form-group
+                      input.form-control.border-top-0.border-left-0.border-right-0.rounded-0.pl-4(type='text', placeholder='Location')
+                      .lis-search
+                        i.fa.fa-map-o.lis-primary
+                  .col-12.col-sm-6.col-lg-4
+                    .form-group
+                      select.form-control.border-top-0.border-left-0.border-right-0.rounded-0.pl-4
+                        option  All Categories
+                        option 1
+                        option 2
+                        option 3
+                      .lis-search
+                        i.fa.fa-tags.lis-primary
+                  .col-12.col-lg-4
+                    a.btn.btn-primary.btn-block.btn-lg(href='#')
+                      i.fa.fa-search.pr-1
+                      |  Search
+    // End Page Inner
+    // Categories
+    section.lis-grediant.grediant-tb-white
+      .container
+        .row.justify-content-center
+          .col-12.col-md-10.text-center
+            .heading.pb-4
+              h2.f-weight-500 Discover Our Featured Categories.
+              h5.lis-light Find the best places
+        .row
+          .col-12.col-sm-4.col-lg-2.wow.fadeInUp.mb-4.mb-lg-0.text-center
+            a.text-white(href='listing-no-map-fullwidth.html')
+              .lis-categories.lis-bg1.rounded.lis-font-poppins.py-4
+                .text-white.mb-2.h2
+                  i.icofont.icofont-hotel-alt
+                |  Hotel
+                .categories-listing.lis-absolute.lis-left-0.lis-right-0.invisible.lis-font-roboto 11 Listing
+          .col-12.col-sm-4.col-lg-2.wow.fadeInUp.mb-4.mb-lg-0.text-center
+            a.text-white(href='listing-no-map-fullwidth.html')
+              .lis-categories.lis-bg2.rounded.lis-font-poppins.py-4
+                .text-white.mb-2.h2
+                  i.icofont.icofont-beer
+                |  Bar & Club
+                .categories-listing.lis-absolute.lis-left-0.lis-right-0.invisible.lis-font-roboto 12 Listing
+          .col-12.col-sm-4.col-lg-2.wow.fadeInUp.mb-4.mb-lg-0.text-center
+            a.text-white(href='listing-no-map-fullwidth.html')
+              .lis-categories.lis-bg3.rounded.lis-font-poppins.py-4
+                .text-white.mb-2.h2
+                  i.icofont.icofont-radio-mic
+                |  Entertainment
+                .categories-listing.lis-absolute.lis-left-0.lis-right-0.invisible.lis-font-roboto 13 Listing
+          .col-12.col-sm-4.col-lg-2.wow.fadeInUp.mb-4.mb-sm-0.text-center
+            a.text-white(href='listing-no-map-fullwidth.html')
+              .lis-categories.lis-bg4.rounded.lis-font-poppins.py-4
+                .text-white.mb-2.h2
+                  i.icofont.icofont-fast-food
+                |  Restaurant
+                .categories-listing.lis-absolute.lis-left-0.lis-right-0.invisible.lis-font-roboto 14 Listing
+          .col-12.col-sm-4.col-lg-2.wow.fadeInUp.mb-4.mb-sm-0.text-center
+            a.text-white(href='listing-no-map-fullwidth.html')
+              .lis-categories.lis-bg5.rounded.lis-font-poppins.py-4
+                .text-white.mb-2.h2
+                  i.icofont.icofont-travelling
+                |  Tour & Travels
+                .categories-listing.lis-absolute.lis-left-0.lis-right-0.invisible.lis-font-roboto 15 Listing
+          .col-12.col-sm-4.col-lg-2.wow.fadeInUp.text-center
+            a.text-white(href='listing-no-map-fullwidth.html')
+              .lis-categories.lis-bg6.rounded.lis-font-poppins.py-4
+                .text-white.mb-2.h2
+                  i.icofont.icofont-medical-sign-alt
+                |  Medical
+                .categories-listing.lis-absolute.lis-left-0.lis-right-0.invisible.lis-font-roboto 16 Listing
+        .row
+          .col-12.text-center.mt-5
+            a.btn.btn-success.btn-default(href='listing-categories-style1.html') View More Featured Categories
+    // End Categories
+    // Visited Places
+    section
+      .container
+        .row.justify-content-center
+          .col-12.col-md-10.text-center
+            .heading.pb-4
+              h2.f-weight-500 Most Visited Places
+              h5.lis-light Discover & connect with top-rated local businesses
+      .container-fluid.px-0
+        .fullwidth-carousel-container.center.slider
+          div
+            .card.lis-brd-light.text-center.text-lg-left
+              a(href='listing-categories-style1.html')
+                .lis-grediant.grediant-tb-light2.lis-relative.modImage.rounded-top
+                  img.img-fluid.rounded-top.w-100(src='dist/images/img1.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 Open
+              .card-body.pt-0
+                .media.d-block.d-lg-flex.lis-relative
+                  img.lis-mt-minus-15.img-fluid.d-lg-flex.mx-auto.mr-lg-3.mb-4.mb-lg-0.border.lis-border-width-2.rounded-circle.border-white(src='dist/images/card-logo.png', alt='', width='80')
+                  .media-body.align-self-start.mt-2
+                    h6.mb-0.lis-font-weight-600
+                      a.lis-dark(href='listing-categories-style1.html') Chico Express Car Taxi and Limo Service
+                ul.list-unstyled.my-4.lis-line-height-2
+                  li
+                    i.fa.fa-phone.pr-2
+                    |  +88 25 5894 2589
+                  li
+                    i.fa.fa-map-o.pr-2
+                    |  First Street, New York, USA
+                .clearfix
+                  .float-none.float-lg-left.mb-3.mb-lg-0.mt-1
+                    a.text-white(href='#')
+                      i.icofont.icofont-travelling.px-2.lis-bg5.py-2.lis-rounded-circle-50.lis-f-14
+                    a.lis-id-info.lis-light.p-2.lis-rounded-circle-50.lis-f-14(href='#') 1 More...
+                  .float-none.float-lg-right.mt-1
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-envelope-o.lis-id-info.lis-rounded-circle-50.text-center
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-heart-o.lis-id-info.lis-rounded-circle-50.text-center
+                    a.lis-green-light.text-white.text-white.p-2.lis-rounded-circle-50.lis-f-14.lis-line-height-2(href='#')
+                      i.fa.fa-star
+                      |  4.0
+          div
+            .card.lis-brd-light.text-center.text-lg-left
+              a(href='listing-categories-style1.html')
+                .lis-grediant.grediant-tb-light2.lis-relative.modImage.rounded-top
+                  img.img-fluid.rounded-top.w-100(src='dist/images/img2.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 Closed
+              .card-body.pt-0
+                .media.d-block.d-lg-flex.lis-relative
+                  img.lis-mt-minus-15.img-fluid.d-lg-flex.mx-auto.mr-lg-3.mb-4.mb-lg-0.border.lis-border-width-2.rounded-circle.border-white(src='dist/images/card-logo2.png', alt='', width='80')
+                  .media-body.align-self-start.mt-2
+                    h6.mb-0.lis-font-weight-600
+                      a.lis-dark(href='listing-categories-style1.html') Bodega Garage - Filipino Night Club
+                ul.list-unstyled.my-4.lis-line-height-2
+                  li
+                    i.fa.fa-phone.pr-2
+                    |  +88 25 5894 2589
+                  li
+                    i.fa.fa-map-o.pr-2
+                    |  First Street, New York, USA
+                .clearfix
+                  .float-none.float-lg-left.mb-3.mb-lg-0.mt-1
+                    a.text-white(href='#')
+                      i.icofont.icofont-radio-mic.px-2.lis-bg3.py-2.lis-rounded-circle-50.lis-f-14
+                    a.text-white(href='#')
+                      i.icofont.icofont-beer.px-2.lis-bg2.py-2.lis-rounded-circle-50.lis-f-14
+                    a.lis-id-info.lis-light.p-2.lis-rounded-circle-50.lis-f-14(href='#') 1 More...
+                  .float-none.float-lg-right.mt-1
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-envelope-o.lis-id-info.lis-rounded-circle-50.text-center
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-heart-o.lis-id-info.lis-rounded-circle-50.text-center
+                    a.lis-green-light.text-white.p-2.lis-rounded-circle-50.lis-f-14(href='#')
+                      i.fa.fa-star
+                      |  5.0
+          div
+            .card.lis-brd-light.text-center.text-lg-left
+              a(href='listing-categories-style1.html')
+                .lis-grediant.grediant-tb-light2.lis-relative.modImage.rounded-top
+                  img.img-fluid.rounded-top.w-100(src='dist/images/img3.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 Open
+              .card-body.pt-0
+                .media.d-block.d-lg-flex.lis-relative
+                  img.lis-mt-minus-15.img-fluid.d-lg-flex.mx-auto.mr-lg-3.mb-4.mb-lg-0.border.lis-border-width-2.rounded-circle.border-white(src='dist/images/card-logo3.png', alt='', width='80')
+                  .media-body.align-self-start.mt-2
+                    h6.mb-0.lis-font-weight-600
+                      a.lis-dark(href='listing-categories-style1.html') Regal Cinemas Destiny USA 19 IMAX & RPX
+                ul.list-unstyled.my-4.lis-line-height-2
+                  li
+                    i.fa.fa-phone.pr-2
+                    |  +88 25 5894 2589
+                  li
+                    i.fa.fa-map-o.pr-2
+                    |  First Street, New York, USA
+                .clearfix
+                  .float-none.float-lg-left.mb-3.mb-lg-0.mt-1
+                    a.text-white(href='#')
+                      i.icofont.icofont-radio-mic.px-2.lis-bg3.py-2.lis-rounded-circle-50.lis-f-14
+                    a.lis-id-info.lis-light.p-2.lis-rounded-circle-50.lis-f-14(href='#') 1 More...
+                  .float-none.float-lg-right.mt-1
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-envelope-o.lis-id-info.lis-rounded-circle-50.text-center
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-heart-o.lis-id-info.lis-rounded-circle-50.text-center
+                    a.lis-green-light.text-white.p-2.lis-rounded-circle-50.lis-f-14(href='#')
+                      i.fa.fa-star
+                      |  4.5
+          div
+            .card.lis-brd-light.text-center.text-lg-left
+              a(href='listing-categories-style1.html')
+                .lis-grediant.grediant-tb-light2.lis-relative.modImage.rounded-top
+                  img.img-fluid.rounded-top.w-100(src='dist/images/img4.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 Closed
+              .card-body.pt-0
+                .media.d-block.d-lg-flex.lis-relative
+                  img.lis-mt-minus-15.img-fluid.d-lg-flex.mx-auto.mr-lg-3.mb-4.mb-lg-0.border.lis-border-width-2.rounded-circle.border-white(src='dist/images/card-logo4.png', alt='', width='80')
+                  .media-body.align-self-start.mt-2
+                    h6.mb-0.lis-font-weight-600
+                      a.lis-dark(href='listing-categories-style1.html') Pembridge Palace Hotel and Resort
+                ul.list-unstyled.my-4.lis-line-height-2
+                  li
+                    i.fa.fa-phone.pr-2
+                    |  +88 25 5894 2589
+                  li
+                    i.fa.fa-map-o.pr-2
+                    | First Street, New York, USA
+                .clearfix
+                  .float-none.float-lg-left.mb-3.mb-lg-0.mt-1
+                    a.text-white(href='#')
+                      i.icofont.icofont-hotel-alt.px-2.lis-bg1.py-2.lis-rounded-circle-50.lis-f-14
+                    a.text-white(href='#')
+                      i.icofont.icofont-fast-food.px-2.lis-bg2.py-2.lis-rounded-circle-50.lis-f-14
+                    a.lis-id-info.lis-light.p-2.lis-rounded-circle-50.lis-f-14(href='#') 2 More...
+                  .float-none.float-lg-right.mt-1
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-envelope-o.lis-id-info.lis-rounded-circle-50.text-center
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-heart-o.lis-id-info.lis-rounded-circle-50.text-center
+                    a.lis-green-light.text-white.p-2.lis-rounded-circle-50.lis-f-14(href='#')
+                      i.fa.fa-star
+                      |  4.5
+          div
+            .card.lis-brd-light.text-center.text-lg-left
+              a(href='listing-categories-style1.html')
+                .lis-grediant.grediant-tb-light2.lis-relative.modImage.rounded-top
+                  img.img-fluid.rounded-top.w-100(src='dist/images/img5.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 Open
+              .card-body.pt-0
+                .media.d-block.d-lg-flex.lis-relative
+                  img.lis-mt-minus-15.img-fluid.d-lg-flex.mx-auto.mr-lg-3.mb-4.mb-lg-0.border.lis-border-width-2.rounded-circle.border-white(src='dist/images/card-logo5.png', alt='', width='80')
+                  .media-body.align-self-start.mt-2
+                    h6.mb-0.lis-font-weight-600
+                      a.lis-dark(href='listing-categories-style1.html') Vintage Italian Beer Bar & Restaurant
+                ul.list-unstyled.my-4.lis-line-height-2
+                  li
+                    i.fa.fa-phone.pr-2
+                    |  +88 25 5894 2589
+                  li
+                    i.fa.fa-map-o.pr-2
+                    |  First Street, New York, USA
+                .clearfix
+                  .float-none.float-lg-left.mb-3.mb-lg-0.mt-1
+                    a.text-white(href='#')
+                      i.icofont.icofont-travelling.px-2.lis-bg5.py-2.lis-rounded-circle-50.lis-f-14
+                    a.lis-id-info.lis-light.p-2.lis-rounded-circle-50.lis-f-14(href='#') 1 More...
+                  .float-none.float-lg-right.mt-1
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-envelope-o.lis-id-info.lis-rounded-circle-50.text-center
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-heart-o.lis-id-info.lis-rounded-circle-50.text-center
+                    a.lis-green-light.text-white.p-2.lis-rounded-circle-50.lis-f-14(href='#')
+                      i.fa.fa-star
+                      |  4.0
+          div
+            .card.lis-brd-light.text-center.text-lg-left
+              a(href='listing-categories-style1.html')
+                .lis-grediant.grediant-tb-light2.lis-relative.modImage.rounded-top
+                  img.img-fluid.rounded-top.w-100(src='dist/images/img12.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 Open
+              .card-body.pt-0
+                .media.d-block.d-lg-flex.lis-relative
+                  img.lis-mt-minus-15.img-fluid.d-lg-flex.mx-auto.mr-lg-3.mb-4.mb-lg-0.border.lis-border-width-2.rounded-circle.border-white(src='dist/images/card-logo6.png', alt='', width='80')
+                  .media-body.align-self-start.mt-2
+                    h6.mb-0.lis-font-weight-600
+                      a.lis-dark(href='listing-categories-style1.html') Vintage Italian Beer Bar & Restaurant
+                ul.list-unstyled.my-4.lis-line-height-2
+                  li
+                    i.fa.fa-phone.pr-2
+                    |  +88 25 5894 2589
+                  li
+                    i.fa.fa-map-o.pr-2
+                    |  First Street, New York, USA
+                .clearfix
+                  .float-none.float-lg-left.mb-3.mb-lg-0.mt-1
+                    a.text-white(href='#')
+                      i.icofont.icofont-travelling.px-2.lis-bg5.py-2.lis-rounded-circle-50.lis-f-14
+                    a.lis-id-info.lis-light.p-2.lis-rounded-circle-50.lis-f-14(href='#') 1 More...
+                  .float-none.float-lg-right.mt-1
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-envelope-o.lis-id-info.lis-rounded-circle-50.text-center
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-heart-o.lis-id-info.lis-rounded-circle-50.text-center
+                    a.lis-green-light.text-white.p-2.lis-rounded-circle-50.lis-f-14(href='#')
+                      i.fa.fa-star
+                      |  4.0
+    // End Visited Places
+    // Features
+    section.image-bg.lis-grediant.grediant-full
+      .background-image-maker
+      .holder-image
+        img.img-fluid.d-none(src='dist/images/bg2.jpg', alt='')
+      .container
+        .row.justify-content-center
+          .col-12.col-md-10.text-center
+            .heading.pb-4
+              h2 Get Associated With Us
+              h5.font-weight-normal Expolore top-rated attractions, activities and more
+        .row
+          .col-12.col-md-4.text-center.wow.fadeInUp.mb-5.mb-md-0
+            .lis-features-box.lis-brd-light.border.rounded.px-4.py-5
+              .h1
+                i.fa.fa-address-card-o.h1
+              h5 Add Your Listing
+              |  Maecs tempus, tellus eget rhoncus, sem condimentum quam semper libero.
+          .col-12.col-md-4.text-center.wow.fadeInUp.mb-5.mb-md-0
+            .lis-features-box.lis-brd-light.border.rounded.px-4.py-5
+              .h1
+                i.fa.fa-bullhorn.h1
+              h5 Advertise & Promote
+              |  Maecs tempus, tellus eget rhoncus, sem condimentum quam semper libero.
+          .col-12.col-md-4.text-center.wow.fadeInUp
+            .lis-features-box.lis-brd-light.border.rounded.px-4.py-5
+              .h1
+                i.fa.fa-handshake-o.h1
+              h5 Partner With Us
+              |  Maecs tempus, tellus eget rhoncus, sem condimentum quam semper libero.
+    // End Features
+    // Upcoming Events
+    section
+      .container
+        .row.justify-content-center
+          .col-12.col-md-10.text-center
+            .heading.pb-4
+              h2 Upcoming Events
+              h5.font-weight-normal.lis-light Discover & connect with top-rated local businesses
+        .row
+          .col-12.col-md-6.col-lg-4.wow.fadeInUp.mb-5.mb-lg-0
+            .card.lis-brd-light.bg-transparent
+              a(href='listing-explore-event-profile.html')
+                .modImage.lis-grediant.grediant-tb-light2.lis-relative.rounded-top
+                  img.img-fluid.rounded-top.w-100(src='dist/images/img6.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 Oct 18-20
+              .card-body
+                .media.d-block.d-sm-flex.text-center.text-sm-left
+                  .d-block.d-sm-flex
+                    ul.list-unstyled.my-0
+                      li.lis-font-weight-600.mb-2.h6
+                        a.lis-dark(href='listing-explore-event-profile.html') Enchanted Valley Carnival
+                      li
+                        i.fa.fa-map-o.pr-2
+                        |  Bishop Avenue, New York
+                  .media-body.align-self-center.text-center.text-sm-right.mt-3.mt-sm-0
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-heart-o.lis-id-info.lis-rounded-circle-50.text-center
+          .col-12.col-md-6.col-lg-4.wow.fadeInUp.mb-5.mb-lg-0
+            .card.lis-brd-light.bg-transparent
+              a(href='listing-explore-event-profile.html')
+                .modImage.lis-grediant.grediant-tb-light2.lis-relative.rounded-top
+                  img.img-fluid.rounded-top.w-100(src='dist/images/img7.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 Nov 13-15
+              .card-body
+                .media.d-block.d-sm-flex.text-center.text-sm-left
+                  .d-block.d-sm-flex
+                    ul.list-unstyled.my-0
+                      li.lis-font-weight-600.mb-2.h6
+                        a.lis-dark(href='listing-explore-event-profile.html') Timeout 72 Hours
+                      li
+                        i.fa.fa-map-o.pr-2
+                        |  North Street, New York, USA
+                  .media-body.align-self-center.text-center.text-sm-right.mt-3.mt-sm-0
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-heart-o.lis-id-info.lis-rounded-circle-50.text-center
+          .col-12.col-md-6.col-lg-4.wow.fadeInUp.mb-4.mb-lg-0
+            .card.lis-brd-light.bg-transparent
+              a(href='listing-explore-event-profile.html')
+                .modImage.lis-grediant.grediant-tb-light2.lis-relative.rounded-top
+                  img.img-fluid.rounded-top.w-100(src='dist/images/img8.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 Dec 28-31
+              .card-body
+                .media.d-block.d-sm-flex.text-center.text-sm-left
+                  .d-block.d-sm-flex
+                    ul.list-unstyled.my-0
+                      li.lis-font-weight-600.mb-2.h6
+                        a.lis-dark(href='listing-explore-event-profile.html') VH1 Supersonic 2018
+                      li
+                        i.fa.fa-map-o.pr-2
+                        |  Bishop Avenue, New York
+                  .media-body.align-self-center.text-center.text-sm-right.mt-3.mt-sm-0
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-heart-o.lis-id-info.lis-rounded-circle-50.text-center
+    // End Upcoming Events
+    // Featured Property
+    section.lis-bg-light
+      .container
+        .row.justify-content-center
+          .col-12.col-md-10.text-center
+            .heading.pb-4
+              h2 Featured Properties
+              h5.font-weight-normal.lis-light Discover & connect with top-rated local businesses
+        .row
+          .col-12.col-md-6.col-lg-4.wow.fadeInUp.mb-5.mb-lg-0
+            .card.lis-brd-light
+              a(href='listing-explore-property-profile.html')
+                .modImage.lis-grediant.grediant-tb-light2.lis-relative.rounded-top
+                  img.img-fluid.rounded-top.w-100(src='dist/images/img9.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 For Sale
+              .card-body
+                h6.lis-font-weight-600.mb-2
+                  a.lis-dark(href='listing-explore-property-profile.html') Villa in Melbourne City
+                ul.list-unstyled.mt-0
+                  li
+                    i.fa.fa-map-o.pr-2
+                    | 1903 Hollywood, NJ 85624, USA
+                .media.pt-2
+                  .d-flex
+                    h5.lis-primary.mb-0
+                      span.lis-f-14.lis-dark Price:
+                      |  $13,80,000
+                  .media-body.align-self-center.text-right
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-heart-o.lis-id-info.lis-rounded-circle-50.text-center
+              .lis-devider
+              ul.list-inline.mb-0.text-center.lis-property-meta
+                li.list-inline-item.lis-brd-right.lis-brd-light.lis-meta-block.float-left
+                  i.fa.fa-object-group.pr-1
+                  |  5842 m2
+                li.list-inline-item.lis-brd-right.lis-brd-light.lis-meta-block.float-left
+                  i.fa.fa-bed.pr-1
+                  |  4 Bed
+                li.list-inline-item.lis-meta-block.float-left
+                  i.fa.fa-bath.pr-1
+                  |  3 Bath
+          .col-12.col-md-6.col-lg-4.wow.fadeInUp.mb-5.mb-lg-0
+            .card.lis-brd-light
+              a(href='listing-explore-property-profile.html')
+                .modImage.lis-grediant.grediant-tb-light2.lis-relative.rounded-top
+                  img.img-fluid.rounded-top.w-100(src='dist/images/img10.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 For Rent
+              .card-body
+                h6.lis-font-weight-600.mb-2
+                  a.lis-dark(href='listing-explore-property-profile.html') Family House in Omaha
+                ul.list-unstyled.mt-0
+                  li
+                    i.fa.fa-map-o.pr-2
+                    | 15421 Southwest, NJ 32568, USA
+                .media.pt-2
+                  .d-flex
+                    h5.lis-primary.mb-0
+                      span.lis-f-14.lis-dark Price:
+                      |  $2,500 
+                      small.lis-light /month
+                  .media-body.align-self-center.text-right
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-heart-o.lis-id-info.lis-rounded-circle-50.text-center
+              .lis-devider
+              ul.list-inline.mb-0.text-center.lis-property-meta
+                li.list-inline-item.lis-brd-right.lis-brd-light.lis-meta-block.float-left
+                  i.fa.fa-object-group.pr-1
+                  |  2018 m2
+                li.list-inline-item.lis-brd-right.lis-brd-light.lis-meta-block.float-left
+                  i.fa.fa-bed.pr-1
+                  |  2 Bed
+                li.list-inline-item.lis-meta-block.float-left
+                  i.fa.fa-bath.pr-1
+                  |  1 Bath
+          .col-12.col-md-6.col-lg-4.wow.fadeInUp.mb-5.mb-lg-0
+            .card.lis-brd-light
+              a(href='listing-explore-property-profile.html')
+                .modImage.lis-grediant.grediant-tb-light2.lis-relative.rounded-top
+                  img.img-fluid.rounded-top.w-100(src='dist/images/img11.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 For Rent
+              .card-body
+                h6.lis-font-weight-600.mb-2
+                  a.lis-dark(href='listing-explore-property-profile.html') Park Avenue Apartment 
+                ul.list-unstyled.mt-0
+                  li
+                    i.fa.fa-map-o.pr-2
+                    | 14228 Townshire Drive, NJ 06589, USA
+                .media.pt-2
+                  .d-flex
+                    h5.lis-primary.mb-0
+                      span.lis-f-14.lis-dark Price:
+                      |  $3,100 
+                      small.lis-light /month
+                  .media-body.align-self-center.text-right
+                    a.lis-light.lis-f-14(href='#')
+                      i.fa.fa-heart-o.lis-id-info.lis-rounded-circle-50.text-center
+              .lis-devider
+              ul.list-inline.mb-0.text-center.lis-property-meta
+                li.list-inline-item.lis-brd-right.lis-brd-light.lis-meta-block.float-left
+                  i.fa.fa-object-group.pr-1
+                  |  3258 m2
+                li.list-inline-item.lis-brd-right.lis-brd-light.lis-meta-block.float-left
+                  i.fa.fa-bed.pr-1
+                  |  4 Bed
+                li.list-inline-item.lis-meta-block.float-left
+                  i.fa.fa-bath.pr-1
+                  |  2 Bath
+    // End Featured Property
+    // Work
+    section
+      .container
+        .row.justify-content-center
+          .col-12.col-md-10.text-center
+            .heading.pb-4
+              h2 How Does It Work
+              h5.font-weight-normal.lis-light Discover & connect with top-rated local businesses
+        .row
+          .col-12.col-md-4.text-center.wow.fadeInUp.mb-5.mb-md-0
+            .icon-box.box-line.box-line-dotted1.lis-relative
+              img.img-fluid.mb-4.z-index-99.lis-relative(src='dist/images/icon-1.png', alt='')
+              h5 1. Find Interesting Place
+              p
+                | Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.
+          .col-12.col-md-4.text-center.wow.fadeInUp.mb-5.mb-md-0
+            .icon-box.box-line.box-line-dotted2.lis-relative
+              img.img-fluid.mb-4.z-index-99.lis-relative(src='dist/images/icon-2.png', alt='')
+              h5 2. Choose a Category
+              p
+                | Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.
+          .col-12.col-md-4.text-center.wow.fadeInUp.mb-5.mb-md-0
+            .icon-box
+              img.img-fluid.mb-4.z-index-99.lis-relative(src='dist/images/icon-3.png', alt='')
+              h5 3. Contact with Owners
+              p
+                | Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.
+    // End Work
+    // Blog
+    section
+      .container
+        .row.justify-content-center
+          .col-12.col-md-10.text-center
+            .heading.pb-4
+              h2 Letest Tips & Blog
+              h5.font-weight-normal.lis-light Discover & connect with top-rated local businesses
+        .row
+          .col-12.col-md-6.col-lg-4.wow.fadeInUp.mb-5.mb-lg-0
+            .card.border-0.lis-relative
+              a(href='blog-single.html')
+                .modImage.lis-grediant.grediant-tb-light2.lis-relative.rounded
+                  img.img-fluid.rounded(src='dist/images/blog1.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 Bar & Club
+              .pt-4
+                span.lis-light 16 October 2017
+                a.lis-dark(href='blog-single.html')
+                  h6.mt-2 Donec vitae sapien ut libero>
+                p
+                  | Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus nullam accumsan dui.
+          .col-12.col-md-6.col-lg-4.wow.fadeInUp.mb-5.mb-lg-0
+            .card.border-0.lis-relative
+              a(href='blog-single.html')
+                .modImage.lis-grediant.grediant-tb-light2.lis-relative.rounded
+                  img.img-fluid.rounded(src='dist/images/blog2.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 Bar & Club
+              .pt-4
+                span.lis-light 24 October 2017
+                a.lis-dark(href='blog-single.html')
+                  h6.mt-2 Donec vitae sapien ut libero>
+                p
+                  | Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus nullam accumsan dui.
+          .col-12.col-md-6.col-lg-4.wow.fadeInUp
+            .card.border-0.lis-relative
+              a(href='blog-single.html')
+                .modImage.lis-grediant.grediant-tb-light2.lis-relative.rounded
+                  img.img-fluid.rounded(src='dist/images/bg2.jpg', alt='')
+                .lis-absolute.lis-right-20.lis-top-20
+                  .lis-post-meta.border.border-white.text-white.rounded.lis-f-14 Bar & Club
+              .pt-4
+                span.lis-light 30 October 2017
+                a.lis-dark(href='blog-single.html')
+                  h6.mt-2 Donec vitae sapien ut libero>
+                p
+                  | Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus nullam accumsan dui.
+    // End Blog
+    // Footer
+    section.image-bg.footer.lis-grediant.grediant-bt.pb-0
+      .background-image-maker
+      .holder-image
+        img.img-fluid.d-none(src='dist/images/bg3.jpg', alt='')
+      .container
+        .row.pb-5
+          .col-12.col-md-8
+            .row
+              .col-12.col-sm-6.col-lg-3.mb-4.mb-lg-0
+                h5.footer-head Useful Links
+                ul.list-unstyled.footer-links.lis-line-height-2_5
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Add Listing
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Sign In
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Register
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Pricing
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Contact Us
+              .col-12.col-sm-6.col-lg-3.mb-4.mb-lg-0
+                h5.footer-head My Account
+                ul.list-unstyled.footer-links.lis-line-height-2_5
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Dashboard
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Profile
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  My Listing
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Favorites
+              .col-12.col-sm-6.col-lg-3.mb-4.mb-md-0
+                h5.footer-head Pages
+                ul.list-unstyled.footer-links.lis-line-height-2_5
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Blog
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Our Partners
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  How It Work
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Privacy Policy
+              .col-12.col-sm-6.col-lg-3
+                h5.footer-head Help
+                ul.list-unstyled.footer-links.lis-line-height-2_5
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Add Listing
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Sign In
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Register
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Pricing
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right.pr-1
+                      |  Contact Us
+          .col-12.col-md-4
+            .footer-logo
+              a(href='#')
+                img.img-fluid(src='dist/images/logo-v1.png', alt='')
+            p.my-4
+              | Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu in felis eu pede mollis enim.
+            a.text-white(href='#')
+              u App Download
+            ul.list-inline.mb-0.mt-2
+              li.list-inline-item
+                a(href='#')
+                  img.img-fluid(src='dist/images/play-store.png', alt='')
+              li.list-inline-item
+                a(href='#')
+                  img.img-fluid(src='dist/images/google-play.png', alt='')
+              li.list-inline-item
+                a(href='#')
+                  img.img-fluid(src='dist/images/windows.png', alt='')
+      .footer-bottom.mt-5.py-4
+        .container
+          .row
+            .col-12.col-md-6.text-center.text-md-left.mb-3.mb-md-0
+              span
+                | © 2017 Lister. Powered by 
+                a.lis-primary(href='#') PSD2allconversion.
+            .col-12.col-md-6.text-center.text-md-right
+              ul.list-inline.footer-social.mb-0
+                li.list-inline-item.pr-3
+                  a(href='#')
+                    i.fa.fa-facebook
+                li.list-inline-item.pr-3
+                  a(href='#')
+                    i.fa.fa-twitter
+                li.list-inline-item.pr-3
+                  a(href='#')
+                    i.fa.fa-linkedin
+                li.list-inline-item.pr-3
+                  a(href='#')
+                    i.fa.fa-tumblr
+                li.list-inline-item
+                  a(href='#')
+                    i.fa.fa-pinterest-p
+    // End  Footer
+    // Top To Bottom
+    a.scrollup.text-center.lis-bg-primary.lis-rounded-circle-50(href='#')
+      .text-white.mb-0.lis-line-height-1_7.h3
+        i.icofont.icofont-long-arrow-up
+    // End Top To Bottom
+    // Login /Register Form
+    .container
+      #modal.popupContainer(style='display: none;')
+        header.popupHeader
+          span.header_title Login
+          span.modal_close
+            i.fa.fa-times
+        .popupBody
+          // Social Login
+          // Username & Password Login form
+          .user_login
+            form(onsubmit="return false")
+              input.logmail.form-control.border-top-0.border-left-0.border-right-0.rounded-0(type='email', placeholder='Enter your email address',required='')
+              br
+              input.logpass.form-control.border-top-0.border-left-0.border-right-0.rounded-0(type='password', placeholder='password',required='')
+              br
+              p.logmessage
+              //- .checkbox
+              //-   input#remember(type='checkbox')
+              //-   label(for='remember') Remember me on this computer
+              .action_btns
+                input.btn.btn-primary.btn-default.mt-3.w-100.logbtn(type='submit')
+            //- br
+            //- |  Sign in with your social network
+            //- br
+            //- ul.list-inline.my-0
+            //-   li.list-inline-item.mr-0
+            //-     a.lis-light.lis-social.border.lis-brd-light.text-center.lis-line-height-2_3.rounded.d-block(href='#')
+            //-       i.fa.fa-facebook
+            //-   li.list-inline-item.mr-0
+            //-     a.lis-light.lis-social.border.lis-brd-light.text-center.lis-line-height-2_3.rounded.d-block(href='#')
+            //-       i.fa.fa-twitter
+            //-   li.list-inline-item.mr-0
+            //-     a.lis-light.lis-social.border.lis-brd-light.text-center.lis-line-height-2_3.rounded.d-block(href='#')
+            //-       i.fa.fa-linkedin
+            //-   li.list-inline-item.mr-0
+            //-     a.lis-light.lis-social.border.lis-brd-light.text-center.lis-line-height-2_3.rounded.d-block(href='#')
+            //-       i.fa.fa-tumblr
+            //-   li.list-inline-item.mr-0
+            //-     a.lis-light.lis-social.border.lis-brd-light.text-center.lis-line-height-2_3.rounded.d-block(href='#')
+            //-       i.fa.fa-pinterest-p
+            hr
+            |  Don't have an account 
+            a.register_form(href='#') Sign Up
+          // Register Form
+          .user_register
+            form(onsubmit='return false')
+              input.form-control.border-top-0.border-left-0.border-right-0.rounded-0.name-txt(type='text', placeholder='Username', required='')
+              br
+              input#emailtxt.form-control.border-top-0.border-left-0.border-right-0.rounded-0.email-txt(type='email', placeholder='Email Address', required='')
+              p.email-error.error Please enter a valid email
+              br
+              input.form-control.border-top-0.border-left-0.border-right-0.rounded-0.password-txt(type='password', placeholder='Password', required='')
+              br
+              .checkbox
+                input.updatesCheckBox(type='checkbox')
+                label(for='send_updates') Send me occasional email updates
+              p.message
+              .action_btns
+                input.btn.btn-primary.btn-default.mt-3.w-100.register-btn(type='submit', name='register-btn', value='Register')
+            //- br
+            //- |  Register with your social network
+            //- br
+            //- ul.list-inline.my-0
+            //-   li.list-inline-item.mr-0
+            //-     a.lis-light.lis-social.border.lis-brd-light.text-center.lis-line-height-2_3.rounded.d-block(href='#')
+            //-       i.fa.fa-facebook
+            //-   li.list-inline-item.mr-0
+            //-     a.lis-light.lis-social.border.lis-brd-light.text-center.lis-line-height-2_3.rounded.d-block(href='#')
+            //-       i.fa.fa-twitter
+            //-   li.list-inline-item.mr-0
+            //-     a.lis-light.lis-social.border.lis-brd-light.text-center.lis-line-height-2_3.rounded.d-block(href='#')
+            //-       i.fa.fa-linkedin
+            //-   li.list-inline-item.mr-0
+            //-     a.lis-light.lis-social.border.lis-brd-light.text-center.lis-line-height-2_3.rounded.d-block(href='#')
+            //-       i.fa.fa-tumblr
+            //-   li.list-inline-item.mr-0
+            //-     a.lis-light.lis-social.border.lis-brd-light.text-center.lis-line-height-2_3.rounded.d-block(href='#')
+            //-       i.fa.fa-pinterest-p
+            hr
+            |  Already have an account 
+            a.login_form(href='#modal') Sign In
+          div
+            form.otp-form(onsubmit='return false')
+              input.form-control.border-top-0.border-left-0.border-right-0.rounded-0.otp-Number(type='text', placeholder='Enter OTP', required='')
+              p.message
+              .action_btns
+                input.btn.btn-primary.btn-default.mt-3.w-100.validate-btn(type='submit', name='validate-btn', value='Register')
+    // End Login /Register Form
+    // jQuery
+    script(src='dist/js/plugins.min.js')
+    script(src='dist/js/common.js')
+    script(src='javascripts/jquery.min.js')
+    script(src='javascripts/form.js')
